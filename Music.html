@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Musico</title>
+  <link rel="stylesheet" href="music.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="music.js">
+</head>
+<body>
+  <header>
+    <div class="logo">Musico</div>
+    
+    <div class="new-buttons">
+      <button onclick="openSignIn()">Sign In</button>
+      <button onclick="openSignUp()">Sign Up</button>
+
+    </div>
+  </header>
+  <div id="signInForm" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:#111; padding:20px; border-radius:10px; color:#fff;">
+  <h2>Sign In</h2>
+  <form>
+    <label>Email:</label><br>
+    <input type="email" required><br><br>
+    
+    <label>Password:</label><br>
+    <input type="password" required><br><br>
+    
+    <a href="#" style="color:lightblue;">Forgot Password?</a><br><br>
+    
+    <button type="submit">Login</button>
+    <button type="button" onclick="closeSignIn()">Close</button>
+  </form>
+  </div>
+  
+
+  
+
+  <main>
+    <button id="theme-toggle">🌙</button>
+
+
+    <!-- Search Bar -->
+    <div id="search-container" style="text-align: center; margin: 20px;">
+      <label for="search latest songs">Search Songs</label>
+      <input type="text" id="search-input" placeholder="Search songs..." style="padding: 10px; width: 50%; border-radius: 8px; border: 1px solid #ccc;"/>
+    </div>
+
+
+
+
+    <h2 style="margin-top: 40px; color: white;">Recently
+       Played</h2>
+    <div class="music-row">
+      <div class="song-card">
+        <img src="c:\Users\Ankit gupta\OneDrive\Desktop\Music Project\apna banale.jpg" alt="Song 1" />
+        <h4>Apna Bana Le</h4>
+        <audio id="audio1">
+          <source src="c:\Users\Ankit gupta\OneDrive\Desktop\Music Project\songs\Apna Bana Le (PenduJatt.Com.Se).mp3" type="audio/mpeg" />
+        </audio>
+        <div class="controls">
+            <button id="playPauseBtn"><i class="fas fa-2x fa-play-circle"></i></button>    
+            <input type="range" id="progressBar" value="0" max="100">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <button class="like-btn" onclick="toggleLike(this)">❤️</button>
+
+      </div>
+      <div class="song-card">
+        <img src="c:\Users\Ankit gupta\OneDrive\Desktop\Music Project\raatan lambiyan.jpg" alt="Song 2" />
+        <h4>Raataan lambiyan</h4>
+        <audio id="audio1">
+          
+          <source src="c:\Users\priti gupta\OneDrive\Desktop\music project\music\Raataan Lambiyana(KoshalWorld.Com).mp3" type="audio/mpeg" />
+        </audio>
+        <div class="controls">
+            <button id="playPauseBtn"><i class="fas fa-2x fa-play-circle"></i></button>
+            <input type="range" id="progressBar" value="0" max="100">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <button class="like-btn" onclick="toggleLike(this)">❤️</button>
+
+      </div>
+    </div>
+
+    <section class="section-title">Top Charts</section>
+    <div class="music-row">
+      <div class="song-card">
+        <img src="c:\Users\Ankit gupta\OneDrive\Desktop\Music Project\chogada.png" alt="Song 1" />
+        <h4>Chogada Tara</h4>
+        <audio id="audio1">  
+          <source src="c:\Users\priti gupta\OneDrive\Desktop\music project\music\Chogada - Loveyatri - A Journey Of Love 128 Kbps.mp3" type="audio/mp3" />
+        </audio>
+        <div class="controls">
+            <button id="playPauseBtn"><i class="fas fa-2x fa-play-circle"></i></button>
+            <input type="range" id="progressBar" value="0" max="100">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <button class="like-btn" onclick="toggleLike(this)">❤️</button>
+
+    </div>
+
+      <div class="song-card">
+        <img src="c:\Users\Ankit gupta\OneDrive\Desktop\Music Project\chor baazari phir se.png" alt="Song 2" />
+        <h4>Chor baazari phir se</h4>
+        <audio id="audio1">
+          <source src="c:\Users\priti gupta\OneDrive\Desktop\music project\music\Chor Bazari Phir Se - Bhool Chuk Maaf 320 Kbps.mp3" type="audio/mp3" />
+        </audio>
+        <div class="controls">
+            <button id="playPauseBtn"><i class="fas fa-2x fa-play-circle"></i></button>
+            <input type="range" id="progressBar" value="0" max="100">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <button class="like-btn" onclick="toggleLike(this)">❤️</button>
+
+      </div>
+
+      <div class="song-card">
+        <img src="c:\Users\Ankit gupta\OneDrive\Desktop\Music Project\kesariya.png" alt="Song 3" />
+        <h4>Kesariya</h4>
+        <audio id="audio1">
+          <source src="c:\Users\priti gupta\OneDrive\Desktop\music project\music\Kesariya - Brahmastra 320 Kbps.mp3" type="audio/mp3" />
+        </audio>
+        <div class="controls">
+            <button id="playPauseBtn"><i class="fas fa-2x fa-play-circle"></i></button>
+            <input type="range" id="progressBar" value="0" max="100">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <button class="like-btn" onclick="toggleLike(this)">❤️</button>
+
+      </div>
+
+      <div class="song-card">
+        <img src="c:\Users\Ankit gupta\OneDrive\Desktop\Music Project\mayee.png" alt="Song 4" />
+        <h4>MAYEE</h4>
+        <audio id="audio1">
+          <source src="c:\Users\priti gupta\OneDrive\Desktop\music project\music\Maaye - Sky Force 320 Kbps.mp3" type="audio/mp3" />
+        </audio>
+        <div class="controls">
+            <button id="playPauseBtn"><i class="fas fa-2x fa-play-circle"></i></button>
+            <input type="range" id="progressBar" value="0" max="100">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <button class="like-btn" onclick="toggleLike(this)">❤️</button>
+
+      </div>
+      </div>
+    </div>
+    <div class="music-row">
+      <div class="song-card">
+        <img src="c:\Users\Ankit gupta\OneDrive\Desktop\Music Project\o sheera.png" alt="Song 5" />
+        <h4>Sheera</h4>
+        <audio id="audio1">
+          <source src="c:\Users\priti gupta\OneDrive\Desktop\music project\music\O Shera Teer Te Taj (Film Version) - Kesari Chapter 2 320 Kbps.mp3" type="audio/mp3" />
+        </audio>
+        <div class="controls">
+            <button id="playPauseBtn"><i class="fas fa-2x fa-play-circle"></i></button> 
+            <input type="range" id="progressBar" value="0" max="100">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <button class="like-btn" onclick="toggleLike(this)">❤️</button> 
+      </div>
+      <div class="song-card">
+        <img src="c:\Users\Ankit gupta\OneDrive\Desktop\Music Project\aayi nhi.jpg" alt="Song 5" />
+        <h4>Aayi nhi</h4>
+        <audio id="audio1">
+          <source src="c:\Users\priti gupta\OneDrive\Desktop\music project\music\Aayi Nai - Stree 2 320 Kbps.mp3" type="audio/mp3" />
+        </audio>
+        <div class="controls">
+            <button id="playPauseBtn"><i class="fas fa-2x fa-play-circle"></i></button>
+            <input type="range" id="progressBar" value="0" max="100">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <button class="like-btn" onclick="toggleLike(this)">❤️</button>
+
+      </div>
+      <div class="song-card">
+        <img src="c:\Users\Ankit gupta\OneDrive\Desktop\Music Project\raatan lambiyan.jpg" alt="Song 5" />
+        <h4>Raatan lambiyan</h4>
+        <audio id="audio1">
+          <source src="c:\Users\priti gupta\OneDrive\Desktop\music project\music\Raataan Lambiyana(KoshalWorld.Com).mp3" type="audio/mp3" />
+        </audio>
+        <div class="controls">
+            <button id="playPauseBtn"><i class="fas fa-2x fa-play-circle"></i></button>
+            <input type="range" id="progressBar" value="0" max="100">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <button class="like-btn" onclick="toggleLike(this)">❤️</button>
+
+      </div>
+      <div class="song-card">
+        <img src="c:\Users\Ankit gupta\OneDrive\Desktop\Music Project\apna banale.jpg" alt="Song 5" />  
+               
+        <h4>Apna Bana Le</h4>
+        <audio id="audio1">
+          <source src="c:\Users\priti gupta\OneDrive\Desktop\music project\music\Apna Bana Le - Bhediya 320 Kbps.mp3.crdownload" type="audio/mp3" />
+        </audio>
+        <div class="controls">
+            <button id="playPauseBtn"><i class="fas fa-2x fa-play-circle"></i></button>
+            
+            <input type="range" id="progressBar" value="0" max="100">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <button class="like-btn" onclick="toggleLike(this)">❤️</button>
+      </div>
+      
+  </main>
+  <script>
+  function openSignIn() {
+    document.getElementById("signInForm").style.display = "block";
+  }
+
+  function closeSignIn() {
+    document.getElementById("signInForm").style.display = "none";
+  }
+  </script>
+
+  <script>
+  const toggleBtn = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-theme");
+
+    // Optional: Change icon based on theme
+    if (body.classList.contains("dark-theme")) {
+      toggleBtn.textContent = "☀️"; // Sun icon for light mode
+    } else {
+      toggleBtn.textContent = "🌙"; // Moon icon for dark mode
+    }
+  });
+  </script>
+    
+</body>
+</html>
